@@ -1,38 +1,20 @@
 const containerDiv = document.querySelector(".container");
 
 
-//User should decied size
-const squareSize = 64;
-
-// Calculate how many squares to put out
-
-let witdhAndHeight = (squareSize * 16);
-
-containerDiv.style.width = `${witdhAndHeight}px`;
-containerDiv.style.height = `${witdhAndHeight}px`;
-
-
-
-let squaresToGenerate = (witdhAndHeight/16) * (witdhAndHeight/16);
-
-
-for(let i = 0; i< squaresToGenerate; i++){  //Generate grid
-    createGridBlock();
-}
-
-
 function createGridBlock(){
+
     const squareConatiner = document.createElement("div");
-    squareConatiner.setAttribute("color", "blue");
-    
     squareConatiner.className="grid";
+    squareConatiner.style.backgroundColor="black";
+    squareConatiner.style.height = "16px";
+    squareConatiner.style.width = "16px";
     containerDiv.appendChild(squareConatiner);
 }
 
 
-function ChangeColor(target){
+function ChangeColor(target){ //Pencil
 
-    target.style.backgroundColor =" red";
+    target.style.backgroundColor ="white";
 }
 
 addEventListener("mouseover", e => {
@@ -41,5 +23,50 @@ addEventListener("mouseover", e => {
 });
 
 
+function RemoveCurrentGrid(){
+
+    const gridBlocks = document.querySelectorAll(".grid");
+
+    if(gridBlocks.length > 1){
+        gridBlocks.forEach(gridblock => {
+
+            gridblock.remove();
+        });
+    }
+
+
+}
+
+function NewGrid(){ //Make a new grid
+
+    RemoveCurrentGrid();
+    let gridHeight = prompt("Height: (In squares)");
+    let gridWidth = prompt("Width: (In squares)");
+    
+    console.log(gridHeight);
+    console.log(gridWidth);
+   
+    CalculateGridSize(parseInt(gridHeight),parseInt(gridWidth));
+}
+
+
+function CalculateGridSize(gridHeight,gridWidth){ 
+// Calculate how many squares to put out
+
+let height = gridHeight * 16;
+let width = gridWidth * 16;
+
+//Set new height and width
+containerDiv.style.width = `${height}px`;
+containerDiv.style.height = `${width}px`;
+
+let squaresToGenerate = gridHeight * gridWidth;
+console.log(squaresToGenerate);
+for(let i = 0; i< squaresToGenerate; i++){  //Generate grid
+    createGridBlock();
+}
+
+
+}
 
 

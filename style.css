@@ -1,24 +1,29 @@
-body{
-    margin: 0;
-}
+
 
 .container{
-
     display: flex;
     justify-content: center;
-    justify-items:center;
     flex-wrap: wrap;
-    
+    padding: 0px;
+    margin: 0px;
+       
 }
 
 
 .grid{
-    width: 16px;
-    height: 16px;
-    background-color: blue;
-
+  display: flex;
+  justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-#grid:hover{
-    background-color: red;
+
+.refresh-button{
+    display:flex;
+    justify-content: center;
+    
+}
+
+button{
+    font-size: 50px;
 }
