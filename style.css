@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+
+.container{
+
+    display: flex;
+    justify-content: center;
+    justify-items:center;
+    flex-wrap: wrap;
+    
+}
+
+
+.grid{
+    width: 16px;
+    height: 16px;
+    background-color: blue;
+
+}
+
+#grid:hover{
+    background-color: red;
+}
