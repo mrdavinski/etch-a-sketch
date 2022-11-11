@@ -14,7 +14,12 @@ function createGridBlock(){
 
 function ChangeColor(target){ //Pencil
 
-    target.style.backgroundColor ="white";
+    let randR = Math.round(Math.random() * 255);
+    let randG = Math.round(Math.random() * 255);
+    let randB  = Math.round(Math.random() * 255);
+
+
+    target.style.backgroundColor =`rgb(${randR},${randG},${randR})`;
 }
 
 addEventListener("mouseover", e => {
