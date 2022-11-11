@@ -38,10 +38,22 @@ function RemoveCurrentGrid(){
 }
 
 function NewGrid(){ //Make a new grid
-
+    let gridHeight = 0;
+    let gridWidth = 0;
     RemoveCurrentGrid();
-    let gridHeight = prompt("Height: (In squares)");
-    let gridWidth = prompt("Width: (In squares)");
+    do{
+        gridHeight = prompt("Height: (In squares)");
+
+
+    } while(gridHeight>100);
+    
+    do
+    {
+        gridWidth = prompt("Width: (In squares)");
+
+    }
+    while(gridWidth>100);
+
     
     console.log(gridHeight);
     console.log(gridWidth);
