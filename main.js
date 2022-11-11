@@ -35,10 +35,8 @@ function ChangeColor(target){
     target.style.backgroundColor =" red";
 }
 
-let items = document.querySelectorAll(".grid");
-
-
 addEventListener("mouseover", e => {
+    if(e.target.className === "grid")
     ChangeColor(e.target);
 });
 
